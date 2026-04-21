@@ -1,0 +1,7 @@
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+*.csv
+*_Performance_Audit_*.png
+.DS_Store
