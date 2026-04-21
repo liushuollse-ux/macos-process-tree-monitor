@@ -249,7 +249,7 @@ def generate_final_report(t, cpu, mem, fds, thr, up, down, rel_markers, process_
 
 if __name__ == "__main__":
     print("======================================")
-    print("      macOS 进程性能监控工具（支持子进程）")
+    print("   macOS Process Tree Monitor（进程树聚合）")
     print("======================================")
     target_process = input("请输入要监控的主进程名称关键词（如Lark）: ").strip()
     if not target_process:
