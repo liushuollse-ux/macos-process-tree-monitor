@@ -4,7 +4,6 @@ import matplotlib.pyplot as plt
 from datetime import datetime
 import sys
 import csv
-import os
 from pynput import keyboard
 
 # ================= CONFIGURATION =================
