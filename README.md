@@ -11,6 +11,12 @@
 - **Enter 区间标记**：奇数次 Enter 为区间开始，偶数次为结束；报告中用红/绿虚线标出区间，并在 CPU 图上标注耗时。
 - **产出物**：`{关键词}_Data_HHMMSS.csv`、`{关键词}_Performance_Audit_HHMMSS.png`。
 
+## 示例报告（截图）
+
+以下为实际采样生成的报告示例：多子图展示 **聚合 CPU、内存、整机上下行网速** 等；图中 **红/绿虚线** 为按 **Enter** 标记的区间起止，顶部的 **M1 / M2 / M3** 为各段耗时（秒）。完整报告还包含 **句柄（FD）、线程数** 等子图，运行脚本结束监控后即可在本地生成同风格 PNG。
+
+![示例：性能监控报告（含 Enter 区间标记）](docs/example-performance-report.png)
+
 ## 环境要求
 
 - macOS（依赖 `psutil` 的 `num_fds()` 等接口，**未在 Windows 上验证**）。
@@ -58,7 +64,7 @@ git init
 git add .
 git commit -m "Add macOS process performance monitor (vvai) with README"
 git branch -M main
-git remote add origin https://github.com/YOUR_USERNAME/vvai-macos-perf-monitor.git
+git remote add origin https://github.com/liushuollse-ux/vvai-macos-perf-monitor.git
 git push -u origin main
 ```
 
