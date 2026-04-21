@@ -19,7 +19,7 @@
 
 ## 环境要求
 
-- macOS（依赖 `psutil` 的 `num_fds()` 等接口，**未在 Windows 上验证**）。
+- **macOS**（基于 `psutil` 等接口采集本机进程与网络指标）。
 - Python 3.9+（建议 3.10+）。
 - 图形界面环境：报告生成使用 `matplotlib`，默认会 `plt.show()`。
 
