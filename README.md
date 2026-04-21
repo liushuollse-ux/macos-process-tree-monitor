@@ -50,6 +50,38 @@ python process_tree_monitor.py
 | Threads | 线程数之和 |
 | Upload/Download | 自上次采样间隔内，**整机**网卡收发速率（KB/s），非单进程 |
 
+## 附加工具：三方邮箱验证码抓取
+
+仓库内新增 `tools/third_party_email_code.py`，用于从 `tempmail.plus` 轮询并提取 6 位验证码，适合注册/登录自动化场景中的验证码读取步骤。
+
+### 核心方法
+
+- `get_verification_code_from_temp_mailbox(email_prefix, from_mail, timeout, poll_interval)`
+- 返回值：成功返回 `6` 位验证码字符串，超时或失败返回 `None`
+
+### 快速调用示例
+
+```python
+from tools.third_party_email_code import get_verification_code_from_temp_mailbox
+
+code = get_verification_code_from_temp_mailbox(
+    email_prefix="Llse123456",           # 对应 Llse123456@mailto.plus
+    from_mail="contact@vv.com.sg",       # 按发件人过滤，可按需修改
+    timeout=90,                          # 最长等待秒数
+    poll_interval=3,                     # 轮询间隔秒数
+)
+
+if code:
+    print("验证码:", code)
+else:
+    print("超时未获取到验证码")
+```
+
+### 注意事项
+
+- 该脚本依赖第三方服务可用性与网络连通性，生产环境建议增加异常日志与重试策略。
+- 邮箱接口与页面策略可能变更，建议定期验证请求头与响应字段。
+
 ## 免责声明
 
 本工具仅用于本地研发与测试辅助，输出数据受采样间隔、系统负载、权限等因素影响，**不构成正式性能测评结论**；请在合规前提下使用。
