@@ -58,15 +58,3 @@ python process_tree_monitor.py
 
 如无特殊说明，代码按仓库所有者指定方式使用；若需开源协议可自行补充 `LICENSE` 文件。
 
-## 发布到 GitHub
-
-```bash
-git init
-git add .
-git commit -m "Add macOS process tree monitor"
-git branch -M main
-git remote add origin https://github.com/liushuollse-ux/macos-process-tree-monitor.git
-git push -u origin main
-```
-
-已安装并登录 [GitHub CLI](https://cli.github.com/) 时，可在本目录执行：`gh repo create macos-process-tree-monitor --public --source=. --remote=origin --push`。
